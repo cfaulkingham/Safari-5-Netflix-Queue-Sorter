@@ -7,7 +7,7 @@
 // Coded by Maarten van Egmond.
 // 
 // Modified and Repackaged by Colin Faulkingham (colin dot faulkingham at gmail.com for Safari 5 extension) 
-// Version 1.5 2010-06-14
+// Version 1.4 2010-06-14
 //
 // See namespace URL below for contact info.
 // Released under the GPL license: http://www.gnu.org/copyleft/gpl.html
