@@ -7,7 +7,7 @@
 // Coded by Maarten van Egmond.
 // 
 // Modified and Repackaged by Colin Faulkingham (colin dot faulkingham at gmail.com for Safari 5 extension) 
-// Version 1.4 2010-06-14
+// Version 1.5 2010-06-14
 //
 // See namespace URL below for contact info.
 // Released under the GPL license: http://www.gnu.org/copyleft/gpl.html
@@ -498,12 +498,14 @@ var NetflixQueueSorter = (function () {
         // represented as the expression "(?:.*?\n)*?".  So that matches
         // wherever you are in the string until the end-of-line, and any
         // lines underneath it.  To continue matching on another line,
-        // skip into the line first using ".*?".
+        // skip into the line first using ".*?".             
         var regex = /id="movielength"(?:.*?\n)*?.*?(\d+?) minutes</;
         if (regex.test(text)) {
             len = RegExp.$1 * 1;   // Convert to number.
         } else {   // Could be a series... take the first episode.
-            regex = /Length:<.*?(\d+?) minutes</;
+            
+			regex = /Length<.*?(\d+?) minutes</;
+			//alert(regex.test(text));
             if (regex.test(text)) {
                 len = RegExp.$1 * 1;   // Convert to number.
                 isEpisode = true;
